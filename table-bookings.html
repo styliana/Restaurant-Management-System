@@ -1,0 +1,200 @@
+<!--hypertext markup language  -->
+<!-- DOCTYPE -> recognizes that this document is html  -->
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>Restaurant Management System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- for dropdown sort by ^^^^ -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    html {
+      font-size: 2.5vw;
+    }
+
+    .menu {
+      width: 95%;
+      margin: 0 auto;
+    }
+
+    .menu-table {
+      width: 100%;
+      text-align: center;
+      background-color: #f6f6f6;
+    }
+
+    .action-buttons {
+      margin-left: 3px;
+      border-radius: 10px;
+      border: none;
+      color: #39afb2;
+      text-align: center;
+      cursor: pointer;
+      transition-duration: 0.4s;
+      text-decoration: none;
+    }
+
+    .action-buttons:hover {
+      background-color: #39afb2;
+      color: white;
+    }
+
+    .bookings-header {
+      width: 95%;
+      margin: 0 auto;
+      margin-top: 2%;
+    }
+
+    .input-addbooking {
+      border: 1px solid white;
+      border-radius: 5px;
+      width: 50%;
+      margin-bottom: 10px;
+    }
+
+    .label-addbooking {
+      border: none;
+      color: #8b8989;
+      font-weight: 400;
+      font-size: 2vh;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>Restaurant Management System</title>
+</head>
+
+<body>
+  <!--<div class="top-bar">
+    <p class="who-am-i">You are logged as: guest</p>
+    <a href="log-in-page.html" class="button-top-bar">Log in</a>
+  </div>-->
+  <div class="nav-bar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="log-in-page.html">Login</a></li>
+      <li><a href="menu.html">|Menu</a></li>
+      <li><a href="table-bookings.html">|Reservations</a></li>
+      <li><a href="orders.html">|Orders</a></li>
+    </ul>
+  </div>
+  <div class="header">
+    <img src="images/header.jpg" alt="Header image" style="width:100%;">
+    <h2 class="header-text">Restaurant Management System</h2>
+  </div>
+  <div class="bookings-header">
+    <h2 style="align-items:center; text-align:center;">Table reservations</h2>
+  </div>
+  <button type="button" class="action-buttons dropdown-toggle" data-bs-toggle="dropdown"
+    style="margin-bottom:10px; margin-right:6%; color:black; float:right;">
+    Sort by
+  </button>
+  <div class="dropdown" id="dropdown">
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Name A-Z</a></li>
+      <li><a class="dropdown-item" href="#">Name Z-A</a></li>
+      <li><a class="dropdown-item" href="#">Date earliest first</a></li>
+      <li><a class="dropdown-item" href="#">Date latest first</a></li>
+      <li><a class="dropdown-item" href="#">Table alfabetically</a></li>
+    </ul>
+  </div>
+  <div style="margin-bottom:3%; margin-top:2%; padding: 5px;">
+    <input type="submit" class="action-buttons" value="Search for booking by name"></input>
+    <input type="submit" class="action-buttons" value="Add reservation +" data-bs-toggle="modal"
+      data-bs-target="#add-booking">
+    </input>
+  </div>
+
+  <table class="menu-table" style="margin-bottom:5%;">
+    <thead>
+      <tr>
+        <th>Who</th>
+        <th>Date and time</th>
+        <th>Table</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John Smith</td>
+        <td>10/02/2024 at 17:00</td>
+        <td>22</td>
+        <td>
+          <div><input class="action-buttons" type="submit" value="Delete"><input class="action-buttons" type="submit"
+              value="Edit"><input class="action-buttons" type="submit" value="Confirm"></div>
+        </td>
+      </tr>
+      <!-- <input  type="submit" value=delete>  -->
+      <tr>
+        <td>Anna M</td>
+        <td>25/03/2024 at 16:00</td>
+        <td>3A</td>
+        <td>
+          <div><input class="action-buttons" type="submit" value="Delete"><input class="action-buttons" type="submit"
+              value="Edit"><input class="action-buttons" type="submit" value="Confirm"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>Joe R</td>
+        <td>15/03/2024 at 16:00</td>
+        <td>45</td>
+        <td>
+          <div><input class="action-buttons" type="submit" value="Delete"><input class="action-buttons" type="submit"
+              value="Edit"><input class="action-buttons" type="submit" value="Confirm"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>Robert</td>
+        <td>4/05/2024 at 14:00</td>
+        <td>5</td>
+        <td>
+          <div><input class="action-buttons" type="submit" value="Delete"><input class="action-buttons" type="submit"
+              value="Edit"><input class="action-buttons" type="submit" value="Confirm"></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="footer">
+    <div class="restaurant-contacts">
+      <p style="font-weight: 600;">Contacts</p>
+      <p>Restaurant manager | <a class="contact-links" href="tel:123123123">123123123</a></p>
+      <p>Kitchen staff | <a class="contact-links" href="tel:456456456">456456456</a></p>
+      <p>Deliveries | <a class="contact-links" href="tel:890890890">890890890</a></p>
+    </div>
+    <div class="dev-contacts">
+      <p style="font-weight: 600;">Contact our developers</p>
+      <p>Report issues with this site on </p>
+      <p>email: <a class="contact-links" href="email:developers@email.com">developers@email.com</p>
+    </div>
+  </div>
+
+
+  <div class="modal" id="add-booking" tabindex="-1">
+    <div class="modal-dialog" style="align-items: center;">
+      <div class="modal-content" style="background-color: #ece5df;">
+        <div style="display: flex; justify-content: flex-end; padding: 20px 20px 0 0;">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="color: black; width:80%; align-items: center; margin-left:10%;">
+          <form>
+            <label class="label-addbooking" for="name">Name</label><br>
+            <input class="input-addbooking" type="text" id="name" name="name"><br>
+            <label class="label-addbooking" for="date-time">Date and Time</label><br>
+            <input class="input-addbooking" type="datetime-local" id="date-time" name="date-time"><br>
+            <label class="label-addbooking" for="table">Table</label><br>
+            <input class="input-addbooking" type="text" id="table" name="table"><br>
+            <input style="width:100%; padding:2.5%; align-items: center; margin:10px 0 0 0;" class="action-buttons"
+              type="submit" value="Add Booking">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
