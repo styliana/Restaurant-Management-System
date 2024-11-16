@@ -7,4 +7,6 @@ is a web application that is going to be used by restaurant staff. It allowes th
 - Manage orders: take, edit, delete or display current orders
 
 The staff can use the app fully when they log in into the system.
+
+
 Used: Python, Django, JS, HTML/CSS
