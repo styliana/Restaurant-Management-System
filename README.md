@@ -1,4 +1,4 @@
-# Restaurant-Management-System
+# Restaurant Management System
 #####still working to combine all with django#####
 
 is a web application that is going to be used by restaurant staff. It allowes them to:
